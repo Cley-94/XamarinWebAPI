@@ -22,24 +22,24 @@ namespace XamarinWebAPI.Controllers
             _databaseMyband = new UserService();
         }
 
-        [HttpGet]
+        /*[HttpGet]
         public IList<UserModel> List()
         {
             var listUser = _databaseMyband.SelectAll;
             return listUser;
-        }
+        }*/
         //Busca um usuário
-        [HttpGet]
-        public UserModel GetUser(Guid id)
+        /*[HttpGet]
+        public UserModel GetUser(Guid Id)
         {
-            var user = _databaseMyband.ReadUser(id);
+            var user = _databaseMyband.Read(Id);
             
             if(user == null)
             {
                 throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
             }
             return user;
-        }
+        }*/
         //Insere um usuário
         [HttpPost]
         public void Post([FromBody]UserModel user)
@@ -58,6 +58,12 @@ namespace XamarinWebAPI.Controllers
         public Boolean DeleteGet(Guid id)
         {
             return _databaseMyband.DeleteGet(id);
+        }
+
+        [HttpGet]
+        public UserModel FindByName(String name,String password)
+        {
+            return _databaseMyband.FindByName(name, password);
         }
     }
 }
