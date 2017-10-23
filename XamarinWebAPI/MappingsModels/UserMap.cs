@@ -23,7 +23,7 @@ namespace XamarinWebAPI.Database
             Map(x => x.Phone).Length(11).Not.Nullable();
             Map(x => x.About).Length(300).Nullable();
             Map(x => x.Photo);
-            Table("[USER]");
+            Table("USERS");
         }
     }
 }
