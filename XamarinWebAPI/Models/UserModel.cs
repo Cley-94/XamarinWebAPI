@@ -9,8 +9,10 @@ namespace XamarinWebAPI.Models
     {
         public virtual Guid ID { get; set; }
         public virtual IList<User_GenreModel> User_Genre { get; set; }
+        public virtual IList<MemberModel> Members { get; set; }
         public virtual IList<RatingModel> Rating { get; set; }
         public virtual IList<FollowerModel> Follower { get; set; }
+        public virtual IList<User_InstrumentModel> Instruments { get; set; }
         public virtual String Email { get; set; }
         public virtual String Name { get; set; }
         public virtual String Password { get; set; }
