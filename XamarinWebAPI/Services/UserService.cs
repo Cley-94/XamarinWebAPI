@@ -9,7 +9,7 @@ using NHibernate.Linq;
 
 namespace XamarinWebAPI.Models
 {
-    public class UserService : IDatabaseMyBand<UserModel>
+    public class UserService : IUserModel
     {
         private IList<UserModel> _users;
         UserRepository userRepo = new UserRepository();
@@ -57,9 +57,9 @@ namespace XamarinWebAPI.Models
             return userRepo.DeleteGet(Id);
         }
 
-        public UserModel FindByName(string name, string password)
+        public UserModel FindByName(string name)
         {
-            return userRepo.FindbyName(name,password);
+            return userRepo.FindbyName(name);
         }
     }
 }
